@@ -1,23 +1,20 @@
-public class Paciente {
+public class Paciente extends Persona {
 
-    // Atributos
-    private String nombre;
-    private int edad;
+    // Atributos propios del Paciente
     private String numeroExpediente;
     private String enfermedad;
-    private String telefono;
 
     // Constructor
-    public Paciente(String nombre, int edad, String numeroExpediente,
-                    String enfermedad, String telefono) {
-        this.nombre = nombre;
-        this.edad = edad;
+    public Paciente(String nombre, int edad, String telefono, String numeroExpediente,
+                    String enfermedad) {
+        // Llamamos al constructor de la clase padre (Persona)
+        super(nombre, edad, telefono);
         this.numeroExpediente = numeroExpediente;
         this.enfermedad = enfermedad;
-        this.telefono = telefono;
     }
 
     // Método para mostrar la información del paciente
+    @Override
     public void mostrarInformacion() {
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
